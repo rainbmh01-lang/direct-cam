@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>DirectCam</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="viewport">
+    <video id="preview" autoplay playsinline muted></video>
+    <canvas id="captureCanvas"></canvas>
+
+    <div id="permOverlay" class="hidden">
+      <div class="perm-box">
+        <p id="permText">يتطلب التطبيق إذن الكاميرا والمايكروفون للعمل</p>
+        <button id="btnRequestPerm" type="button">طلب الإذن</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="controls">
+    <div class="row-top">
+      <button id="btnFacing" type="button" class="ctrl-btn">الكاميرا: خلفية</button>
+      <button id="btnMic" type="button" class="ctrl-btn active">المايك: مفعل</button>
+      <button id="btnStream" type="button" class="ctrl-btn">بدء البث</button>
+    </div>
+    <div class="row-bottom">
+      <span id="statusText" class="status-cell">جاهز</span>
+      <input id="hostInput" type="text" value="127.0.0.1:8765" spellcheck="false" autocomplete="off" placeholder="127.0.0.1:8765">
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
